@@ -25,7 +25,7 @@ public class LoginGenerator {
     }
 
     private int generator() {
-        int minValue = 1;
+        int minValue = 100000;
         int maxValue = 999999;
         Random random = new Random();
         return random.ints(minValue, (maxValue + 1))
