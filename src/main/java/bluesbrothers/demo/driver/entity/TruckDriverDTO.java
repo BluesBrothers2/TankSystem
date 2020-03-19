@@ -2,13 +2,13 @@ package bluesbrothers.demo.driver.entity;
 
 public class TruckDriverDTO {
 
+    private int login;
     private String fullName;
     private int phone;
     private String truck_trailer;
 
     public TruckDriverDTO() {
     }
-
 
     public String getFullName() {
         return fullName;
@@ -32,5 +32,13 @@ public class TruckDriverDTO {
 
     public void setTruck_trailer(String truck_trailer) {
         this.truck_trailer = truck_trailer;
+    }
+
+    public int getLogin() {
+        return login;
+    }
+
+    public void setLogin(int login) {
+        this.login = login;
     }
 }

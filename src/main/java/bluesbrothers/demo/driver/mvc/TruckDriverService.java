@@ -1,9 +1,10 @@
 package bluesbrothers.demo.driver.mvc;
 
+import bluesbrothers.demo.driver.assist_classes.LoginGenerator;
 import bluesbrothers.demo.driver.entity.TruckDriver;
 import bluesbrothers.demo.driver.entity.TruckDriverDTO;
-import bluesbrothers.demo.driver.TruckDriverDTOTransformer;
-import bluesbrothers.demo.driver.TruckDriverInputCorrection;
+import bluesbrothers.demo.driver.assist_classes.TruckDriverDTOTransformer;
+import bluesbrothers.demo.driver.assist_classes.TruckDriverInputCorrection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,15 +16,19 @@ public class TruckDriverService extends TruckDriverInputCorrection {
 
     private final TruckDriverRepository truckDriverRepository;
     private final TruckDriverDTOTransformer truckDriverDTOTransformer;
+    private final LoginGenerator loginGenerator;
 
     @Autowired
     public TruckDriverService(TruckDriverRepository truckDriverRepository,
-                              TruckDriverDTOTransformer truckDriverDTOTransformer) {
+                              TruckDriverDTOTransformer truckDriverDTOTransformer,
+                              LoginGenerator loginGenerator) {
         this.truckDriverRepository = truckDriverRepository;
         this.truckDriverDTOTransformer = truckDriverDTOTransformer;
+        this.loginGenerator = loginGenerator;
     }
 
     public TruckDriver addDriver(TruckDriver driver) {
+        driver.setLogin(loginGenerator.generateUnique());
         return truckDriverRepository.save(correctInputBeforeSave(driver));
     }
 

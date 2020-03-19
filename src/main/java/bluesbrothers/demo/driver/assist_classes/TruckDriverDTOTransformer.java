@@ -1,4 +1,4 @@
-package bluesbrothers.demo.driver;
+package bluesbrothers.demo.driver.assist_classes;
 
 import bluesbrothers.demo.driver.entity.TruckDriver;
 import bluesbrothers.demo.driver.entity.TruckDriverDTO;
@@ -9,6 +9,7 @@ public class TruckDriverDTOTransformer {
 
     public TruckDriverDTO toDTO(TruckDriver truckDriver){
         TruckDriverDTO truckDriverDTO = new TruckDriverDTO();
+        truckDriverDTO.setLogin(truckDriver.getLogin());
         truckDriverDTO.setFullName(truckDriver.getFirstName() + " " + truckDriver.getLastName());
         truckDriverDTO.setPhone(truckDriver.getPhoneNumber());
         truckDriverDTO.setTruck_trailer((truckDriver.getTruck() + "/" + truckDriver.getTrailer()));

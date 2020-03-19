@@ -16,6 +16,9 @@ public class TruckDriver {
     @JsonIgnore
     private long id;
 
+    @JsonIgnore
+    private int login;
+
     @NotNull
     @NotEmpty
     private String firstName;
@@ -31,12 +34,8 @@ public class TruckDriver {
     @NotNull
     private int phoneNumber;
 
-    @NotNull
-    @NotEmpty
     private String truck;
 
-    @NotNull
-    @NotEmpty
     private String trailer;
 
     public TruckDriver() {
@@ -56,6 +55,14 @@ public class TruckDriver {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public int getLogin() {
+        return login;
+    }
+
+    public void setLogin(int login) {
+        this.login = login;
     }
 
     public String getDriversId() {

@@ -1,4 +1,4 @@
-package bluesbrothers.demo.driver;
+package bluesbrothers.demo.driver.assist_classes;
 
 import bluesbrothers.demo.driver.entity.TruckDriver;
 
