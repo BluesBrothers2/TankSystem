@@ -1,5 +1,6 @@
 package bluesbrothers.demo.driver;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,6 +11,7 @@ public class TruckDriverController {
 
     private final TruckDriverService truckDriverService;
 
+    @Autowired
     public TruckDriverController(TruckDriverService truckDriverService) {
         this.truckDriverService = truckDriverService;
     }
@@ -23,4 +25,5 @@ public class TruckDriverController {
     public List<TruckDriverDTO> getDrivers(){
         return truckDriverService.getAllDrivers();
     }
+
 }

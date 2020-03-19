@@ -5,8 +5,17 @@ public class TruckDriverDTO {
     private String fullName;
     private int phone;
     private String truck_trailer;
+    private long id;
 
     public TruckDriverDTO() {
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getFullName() {

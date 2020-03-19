@@ -1,11 +1,12 @@
 package bluesbrothers.demo.driver;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class TruckDriver {
@@ -15,16 +16,27 @@ public class TruckDriver {
     @JsonIgnore
     private long id;
 
+    @NotNull
+    @NotEmpty
     private String firstName;
 
+    @NotNull
+    @NotEmpty
     private String lastName;
 
+    @NotNull
+    @NotEmpty
     private String driversId;
 
+    @NotNull
     private int phoneNumber;
 
+    @NotNull
+    @NotEmpty
     private String truck;
 
+    @NotNull
+    @NotEmpty
     private String trailer;
 
     public TruckDriver() {
@@ -76,5 +88,9 @@ public class TruckDriver {
 
     public void setTrailer(String trailer) {
         this.trailer = trailer;
+    }
+
+    public long getId() {
+        return id;
     }
 }
