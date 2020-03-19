@@ -1,5 +1,9 @@
-package bluesbrothers.demo.driver;
+package bluesbrothers.demo.driver.mvc;
 
+import bluesbrothers.demo.driver.entity.TruckDriver;
+import bluesbrothers.demo.driver.entity.TruckDriverDTO;
+import bluesbrothers.demo.driver.TruckDriverDTOTransformer;
+import bluesbrothers.demo.driver.TruckDriverInputCorrection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

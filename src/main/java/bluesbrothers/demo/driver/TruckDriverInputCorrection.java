@@ -1,6 +1,8 @@
 package bluesbrothers.demo.driver;
 
-abstract class TruckDriverInputCorrection {
+import bluesbrothers.demo.driver.entity.TruckDriver;
+
+public abstract class TruckDriverInputCorrection {
 
     private String upperFistLetter(String text) {
         if (!Character.isUpperCase(text.charAt(0))) {

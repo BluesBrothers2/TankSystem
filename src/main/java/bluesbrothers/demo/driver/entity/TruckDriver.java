@@ -1,4 +1,4 @@
-package bluesbrothers.demo.driver;
+package bluesbrothers.demo.driver.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.Entity;

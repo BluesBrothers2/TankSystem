@@ -1,5 +1,6 @@
-package bluesbrothers.demo.driver;
+package bluesbrothers.demo.driver.mvc;
 
+import bluesbrothers.demo.driver.entity.TruckDriver;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
