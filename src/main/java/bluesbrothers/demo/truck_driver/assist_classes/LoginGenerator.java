@@ -1,6 +1,6 @@
-package bluesbrothers.demo.driver.assist_classes;
+package bluesbrothers.demo.truck_driver.assist_classes;
 
-import bluesbrothers.demo.driver.mvc.TruckDriverRepository;
+import bluesbrothers.demo.truck_driver.mvc.TruckDriverRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

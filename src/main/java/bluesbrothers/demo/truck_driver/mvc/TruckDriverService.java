@@ -1,10 +1,10 @@
-package bluesbrothers.demo.driver.mvc;
+package bluesbrothers.demo.truck_driver.mvc;
 
-import bluesbrothers.demo.driver.assist_classes.LoginGenerator;
-import bluesbrothers.demo.driver.entity.TruckDriver;
-import bluesbrothers.demo.driver.entity.TruckDriverDTO;
-import bluesbrothers.demo.driver.assist_classes.TruckDriverDTOTransformer;
-import bluesbrothers.demo.driver.assist_classes.TruckDriverInputCorrection;
+import bluesbrothers.demo.truck_driver.assist_classes.LoginGenerator;
+import bluesbrothers.demo.truck_driver.entity.TruckDriver;
+import bluesbrothers.demo.truck_driver.entity.TruckDriverDTO;
+import bluesbrothers.demo.truck_driver.assist_classes.TruckDriverDTOTransformer;
+import bluesbrothers.demo.truck_driver.assist_classes.TruckDriverInputCorrection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
-package bluesbrothers.demo.driver.assist_classes;
+package bluesbrothers.demo.truck_driver.assist_classes;
 
-import bluesbrothers.demo.driver.entity.TruckDriver;
+import bluesbrothers.demo.truck_driver.entity.TruckDriver;
 
 public abstract class TruckDriverInputCorrection {
 

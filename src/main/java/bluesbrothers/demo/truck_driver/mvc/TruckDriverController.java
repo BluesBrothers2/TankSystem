@@ -1,7 +1,7 @@
-package bluesbrothers.demo.driver.mvc;
+package bluesbrothers.demo.truck_driver.mvc;
 
-import bluesbrothers.demo.driver.entity.TruckDriver;
-import bluesbrothers.demo.driver.entity.TruckDriverDTO;
+import bluesbrothers.demo.truck_driver.entity.TruckDriver;
+import bluesbrothers.demo.truck_driver.entity.TruckDriverDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

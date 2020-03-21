@@ -1,4 +1,4 @@
-package bluesbrothers.demo.driver.entity;
+package bluesbrothers.demo.truck_driver.entity;
 
 public class TruckDriverDTO {
 
