@@ -1,19 +1,19 @@
 package bluesbrothers.demo.truck_driver.entity;
 
+import bluesbrothers.demo.truck.entity.Truck;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name = "truck_drivers")
 public class TruckDriver {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @JsonIgnore
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private long id;
 
     @JsonIgnore
@@ -34,12 +34,15 @@ public class TruckDriver {
     @NotNull
     private int phoneNumber;
 
-    private String truck;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "truck_id", referencedColumnName = "id")
+    private Truck truck;
 
     private String trailer;
 
     public TruckDriver() {
     }
+
 
     public String getFirstName() {
         return firstName;
@@ -81,11 +84,11 @@ public class TruckDriver {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getTruck() {
+    public Truck getTruck() {
         return truck;
     }
 
-    public void setTruck(String truck) {
+    public void setTruck(Truck truck) {
         this.truck = truck;
     }
 
@@ -100,4 +103,5 @@ public class TruckDriver {
     public long getId() {
         return id;
     }
+
 }

@@ -12,7 +12,7 @@ public class TruckDriverDTOTransformer {
         truckDriverDTO.setLogin(truckDriver.getLogin());
         truckDriverDTO.setFullName(truckDriver.getFirstName() + " " + truckDriver.getLastName());
         truckDriverDTO.setPhone(truckDriver.getPhoneNumber());
-        truckDriverDTO.setTruck_trailer((truckDriver.getTruck() + "/" + truckDriver.getTrailer()));
+        truckDriverDTO.setTruck_trailer((truckDriver.getTruck().getPlate() + "/" + truckDriver.getTrailer()));
         return truckDriverDTO;
     }
 }
