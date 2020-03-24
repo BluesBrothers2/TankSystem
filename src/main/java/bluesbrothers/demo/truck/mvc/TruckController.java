@@ -1,6 +1,6 @@
 package bluesbrothers.demo.truck.mvc;
 
-import bluesbrothers.demo.truck.entity.Truck;
+import bluesbrothers.demo.truck.entity.TruckModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,12 +18,12 @@ public class TruckController {
     }
 
     @PostMapping("/add")
-    public Truck addTruck(@RequestBody Truck truck) {
+    public TruckModel addTruck(@RequestBody TruckModel truck) {
         return truckService.add(truck);
     }
 
     @GetMapping
-    public List<Truck> getAll() {
+    public List<TruckModel> getAll() {
         return truckService.getAll();
     }
 

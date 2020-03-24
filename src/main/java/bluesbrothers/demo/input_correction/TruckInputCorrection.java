@@ -1,15 +1,14 @@
 package bluesbrothers.demo.input_correction;
 
-import bluesbrothers.demo.truck.entity.Truck;
+import bluesbrothers.demo.truck.entity.TruckModel;
 
-public abstract class TruckInputCorrection implements InputCorrection<Truck>{
+public abstract class TruckInputCorrection implements InputCorrection<TruckModel>{
 
     @Override
-    public Truck correctInputBeforeSave(Truck truck) {
+    public TruckModel correctInputBeforeSave(TruckModel truck) {
         truck.setPlate(truck.getPlate()
                 .replaceAll("\\s+", "")
                 .toUpperCase());
         return truck;
     }
-
 }

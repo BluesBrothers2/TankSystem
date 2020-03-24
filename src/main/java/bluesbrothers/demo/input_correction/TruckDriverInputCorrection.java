@@ -1,11 +1,11 @@
 package bluesbrothers.demo.input_correction;
 
-import bluesbrothers.demo.truck_driver.entity.TruckDriver;
+import bluesbrothers.demo.truck_driver.entity.TruckDriverModel;
 
-public abstract class TruckDriverInputCorrection implements InputCorrection<TruckDriver>{
+public abstract class TruckDriverInputCorrection implements InputCorrection<TruckDriverModel>{
 
     @Override
-    public TruckDriver correctInputBeforeSave(TruckDriver driver) {
+    public TruckDriverModel correctInputBeforeSave(TruckDriverModel driver) {
         driver.setFirstName(upperFistLetter(driver.getFirstName()));
         driver.setLastName(upperFistLetter(driver.getLastName()));
         driver.setDriversId(driver.getDriversId().toUpperCase());
@@ -14,4 +14,5 @@ public abstract class TruckDriverInputCorrection implements InputCorrection<Truc
                 .toUpperCase());
         return driver;
     }
+
 }

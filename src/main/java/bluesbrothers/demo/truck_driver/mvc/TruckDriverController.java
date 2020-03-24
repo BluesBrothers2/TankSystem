@@ -1,6 +1,6 @@
 package bluesbrothers.demo.truck_driver.mvc;
 
-import bluesbrothers.demo.truck_driver.entity.TruckDriver;
+import bluesbrothers.demo.truck_driver.entity.TruckDriverModel;
 import bluesbrothers.demo.truck_driver.entity.TruckDriverDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +19,7 @@ public class TruckDriverController {
     }
 
     @PostMapping
-    public TruckDriver addDriver(@RequestBody TruckDriver truckDriver){
+    public TruckDriverModel addDriver(@RequestBody TruckDriverModel truckDriver){
         return truckDriverService.addDriver(truckDriver);
     }
 

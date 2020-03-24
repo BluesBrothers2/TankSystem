@@ -1,13 +1,13 @@
 package bluesbrothers.demo.truck_driver.assist_classes;
 
-import bluesbrothers.demo.truck_driver.entity.TruckDriver;
+import bluesbrothers.demo.truck_driver.entity.TruckDriverModel;
 import bluesbrothers.demo.truck_driver.entity.TruckDriverDTO;
 import org.springframework.stereotype.Component;
 
 @Component
 public class TruckDriverDTOTransformer {
 
-    public TruckDriverDTO toDTO(TruckDriver truckDriver){
+    public TruckDriverDTO toDTO(TruckDriverModel truckDriver){
         TruckDriverDTO truckDriverDTO = new TruckDriverDTO();
         truckDriverDTO.setLogin(truckDriver.getLogin());
         truckDriverDTO.setFullName(truckDriver.getFirstName() + " " + truckDriver.getLastName());

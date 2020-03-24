@@ -1,7 +1,7 @@
 package bluesbrothers.demo.truck.mvc;
 
 import bluesbrothers.demo.input_correction.TruckInputCorrection;
-import bluesbrothers.demo.truck.entity.Truck;
+import bluesbrothers.demo.truck.entity.TruckModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,11 +17,11 @@ public class TruckService extends TruckInputCorrection {
         this.truckRepository = truckRepository;
     }
 
-    public Truck add(Truck truck) {
+    public TruckModel add(TruckModel truck) {
         return truckRepository.save(correctInputBeforeSave(truck));
     }
 
-    public List<Truck> getAll() {
+    public List<TruckModel> getAll() {
         return truckRepository.findAll();
     }
 }

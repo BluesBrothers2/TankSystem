@@ -1,9 +1,9 @@
 package bluesbrothers.demo.truck_driver.mvc;
 
-import bluesbrothers.demo.truck.entity.Truck;
+import bluesbrothers.demo.truck.entity.TruckModel;
 import bluesbrothers.demo.truck.mvc.TruckRepository;
 import bluesbrothers.demo.truck_driver.assist_classes.LoginGenerator;
-import bluesbrothers.demo.truck_driver.entity.TruckDriver;
+import bluesbrothers.demo.truck_driver.entity.TruckDriverModel;
 import bluesbrothers.demo.truck_driver.entity.TruckDriverDTO;
 import bluesbrothers.demo.truck_driver.assist_classes.TruckDriverDTOTransformer;
 import bluesbrothers.demo.input_correction.TruckDriverInputCorrection;
@@ -22,6 +22,7 @@ public class TruckDriverService extends TruckDriverInputCorrection {
     private final TruckRepository truckRepository;
     private final LoginGenerator loginGenerator;
 
+
     @Autowired
     public TruckDriverService(TruckDriverRepository truckDriverRepository,
                               TruckDriverDTOTransformer truckDriverDTOTransformer,
@@ -32,10 +33,9 @@ public class TruckDriverService extends TruckDriverInputCorrection {
         this.loginGenerator = loginGenerator;
     }
 
-    //TODO: zrobić sprawdzenie przed zapisem, czy auto jest juz przypisane do jakiegos kierowcy.
-    public TruckDriver addDriver(TruckDriver driver) {
+    public TruckDriverModel addDriver(TruckDriverModel driver) {
         driver.setLogin(loginGenerator.generateUnique());
-        Truck truck = truckRepository.findById(driver.getTruck().getId()).orElseThrow(NoSuchElementException::new);
+        TruckModel truck = truckRepository.findById(driver.getTruck().getId()).orElseThrow(NoSuchElementException::new);
         driver.setTruck(truck);
         return truckDriverRepository.save(correctInputBeforeSave(driver));
     }

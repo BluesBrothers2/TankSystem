@@ -1,6 +1,6 @@
 package bluesbrothers.demo.truck_driver.entity;
 
-import bluesbrothers.demo.truck.entity.Truck;
+import bluesbrothers.demo.truck.entity.TruckModel;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "truck_drivers")
-public class TruckDriver {
+public class TruckDriverModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,13 +34,13 @@ public class TruckDriver {
     @NotNull
     private int phoneNumber;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne  (cascade = CascadeType.ALL)
     @JoinColumn(name = "truck_id", referencedColumnName = "id")
-    private Truck truck;
+    private TruckModel truck;
 
     private String trailer;
 
-    public TruckDriver() {
+    public TruckDriverModel() {
     }
 
 
@@ -84,11 +84,11 @@ public class TruckDriver {
         this.phoneNumber = phoneNumber;
     }
 
-    public Truck getTruck() {
+    public TruckModel getTruck() {
         return truck;
     }
 
-    public void setTruck(Truck truck) {
+    public void setTruck(TruckModel truck) {
         this.truck = truck;
     }
 

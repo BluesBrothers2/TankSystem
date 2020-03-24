@@ -1,13 +1,14 @@
 package bluesbrothers.demo.truck.entity;
 
-import bluesbrothers.demo.truck_driver.entity.TruckDriver;
+import bluesbrothers.demo.truck_driver.entity.TruckDriverModel;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "trucks")
-public class Truck {
+public class TruckModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,11 +17,11 @@ public class Truck {
 
     private String plate;
 
-    @OneToOne(mappedBy = "truck")
+    @OneToMany(mappedBy = "truck")
     @JsonIgnore
-    private TruckDriver driver;
+    private Set<TruckDriverModel> driver;
 
-    public Truck() {
+    public TruckModel() {
     }
 
     public long getId() {
@@ -35,13 +36,11 @@ public class Truck {
         this.plate = plate;
     }
 
-    public TruckDriver getDriver() {
+    public Set<TruckDriverModel> getDriver() {
         return driver;
     }
 
-    public void setDriver(TruckDriver driver) {
+    public void setDriver(Set<TruckDriverModel> driver) {
         this.driver = driver;
     }
-
-
 }
